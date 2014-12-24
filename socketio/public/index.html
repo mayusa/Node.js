@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./stylesheets/style.css">
+	<title>Document</title
+</head>
+<body>
+<div id="chatroom">
+	<ul id="chat_log">
+		
+	</ul>
+</div>
+<div class="user_name">
+<input type="text" name="username" id="user_name" value="" placeholder="Type your name here">
+</div>
+<div class="chat_box">
+<label for="chat_box">Chat Box</label>
+<input type="text" name="chat_box" id="chat_box" value="" placeholder="type to chat...then click enter">
+</div>
+<!-- before testing, change to your server ip first (10.0.0.18) -->
+<script src="http://10.0.0.18:3000/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function () {
+	var username = '';
+	$('.chat_box').hide();
+	$('#user_name').keypress(function (event) {
+		if (event.which == 13 && $('#user_name').val() === '') {
+			alert('please enter you name first~!');
+		} else if(event.which == 13 && $('#user_name').val() !== ''){
+			username = $('#user_name').val();
+			$('.chat_box').show();
+			$('.user_name').hide();
+			label_username(username);
+		};
+
+	});
+
+	var log_chat_msg = function	(msg){
+		var li = $('<li />').text(msg);
+		$('#chat_log').append(li);
+	};
+
+	var label_username = function(username){
+		var divname = $('<div />').text('you: '+username);
+		$('#chat_log').append(divname);
+	}
+
+	// before testing, change to your server ip first (10.0.0.18)
+	var socket = io.connect('http://10.0.0.18:3000');
+
+	socket.on('entrance', function (data) {
+		log_chat_msg(data.message);
+	});
+
+	socket.on('exit', function (data) {
+		log_chat_msg(data.message);
+	});
+
+	socket.on('chat message', function (data) {
+		log_chat_msg(data.message);
+	});
+
+	$('#chat_box').keypress(function (event) {
+		if (event.which == 13) {
+			socket.emit('chat message', {message: username + ': ' + $('#chat_box').val()});
+			$('#chat_box').val('');
+		}
+	});
+
+});	
+</script>
+</body>
+</html>
