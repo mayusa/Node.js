@@ -1,0 +1,5 @@
+{
+  "name": "May's Chat Room",
+  "description": "A Chat Room Node.js app using Express 4 & Socket.io",
+  "keywords": ["node", "express", "socket.io"]
+}

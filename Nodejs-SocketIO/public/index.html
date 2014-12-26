@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="./javascripts/lib/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./stylesheets/style.css">
+	<title>May's Chat Room</title>
+</head>
+<body>
+<!-- container -->
+<div id="chatroom" class="container">
+
+<div class="row">
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">May's Chat Room</a>
+</div>
+</div>
+
+<div id="mainboard" class="row">
+
+<div class="col-sm-4">
+	<label>userlist</label>
+	<div id="userlist" class="well">
+	</div>
+</div>
+
+<div class="col-sm-8 well well-sm">
+	<ul id="chat_log">
+		
+	</ul>
+</div>
+
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    <div class="user_name">
+		<input type="text" class="form-control" name="username" id="user_name" value="" placeholder="Type your name here">
+		</div>
+
+
+		<div class="chat_box">
+		<input type="text" class="form-control" name="chat_box" id="chat_box" value="" placeholder="type to chat...then click enter">
+	</div>
+  </div>
+</nav>
+
+</div> <!-- /container -->
+
+<!-- before testing, change to your server ip first (10.0.0.5) -->
+<script src=""></script>
+<script src="./javascripts/lib/jquery/dist/jquery.min.js"></script>
+<script src="./javascripts/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="./javascripts/index.js"></script>
+
+</body>
+</html>

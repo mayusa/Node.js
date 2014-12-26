@@ -1,0 +1,42 @@
+/* Space out content a bit */
+@font-face {
+  font-family: 'Architects Daughter';
+  font-style: normal;
+  font-weight: 400;
+
+  src: url('./ArchitectsDaughter.ttf');
+  src: url('./ArchitectsDaughter.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body{
+  font-family: 'Architects Daughter', 'Microsoft Yahei', Tahoma, Arial;
+}
+body { padding-bottom: 70px; }
+
+input {
+  font-size: 22px;  
+  width:300px;
+}
+
+li{
+  list-style: none;
+}
+.font-orange{
+  color: orange;
+  font-size: 20px;
+  font-family: Arial;
+}
+.font-blue{
+  color: #69b;
+  font-size: 20px;
+  font-family: Arial;
+}
+.navbar-default {
+background-color: #ffffff;
+padding:10px 0;
+}
+
+#chat_log{
+  padding-left:10px;
+}
