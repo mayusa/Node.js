@@ -1,5 +1,11 @@
-#Mac 安装 node.js
-   
+#Mac 安装 node.js  
+
+##方法一:   
+
+brew install node  
+
+
+##方法二:  
 ###1. 下载nodejs 
 https://nodejs.org/download/  
 选择 binary包： Mac OS X Binaries (.tar.gz)  
