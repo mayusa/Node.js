@@ -10,7 +10,8 @@ sudo vi ~/.bash_profile
 add : export PATH=~/bin/node-v0.12.0/bin/:$PATH  
 
 ###3 执行  
->$ source ~/.bash_profile   
+>$ source ~/.bash_profile    
+
 使新path生效    
 
 ###4. test  
