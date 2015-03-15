@@ -2,7 +2,7 @@
 
 ##方法一:   
 
-brew install node  
+>$ brew install node  
 
 
 ##方法二:  
