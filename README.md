@@ -1,5 +1,9 @@
 #Mac 安装 node.js  
 
+###注意:   
+
+执行npm不用加sudo, 否则npm会报错!!
+
 ##方法一:   
 
 >$ brew install node  
@@ -23,6 +27,7 @@ add : export PATH=~/bin/node-v0.12.0/bin/:$PATH
 ###4. test  
 >$ node -v  
 >$ npm -v    
+
 
 
 ---
